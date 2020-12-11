@@ -11,9 +11,9 @@ public class BancoMenu {
 		Scanner leia = new Scanner(System.in);
 
 		
-			linha(50);
-			System.out.println("Bem vindo ao Banco G2");
-			linha(50);
+			inseriLinha(80,'‚ñë');
+			System.out.println("Bem vindo ao Banco G2 Group");
+			inseriLinha(80,'‚ñë');
 
 			System.out.println();
 			System.out.print("Digite o seu nome: ");
@@ -23,12 +23,12 @@ public class BancoMenu {
 			System.out.println();
 			
 		do {
-			System.out.println("Digite a opÁ„o de conta");
-			System.out.println("1 - Conta PoupanÁa ");
+			System.out.println("Digite a op√ß√£o de conta");
+			System.out.println("1 - Conta Poupan√ßa ");
 			System.out.println("2 - Conta Corrente ");
 			System.out.println("3 - Conta Especial ");
 			System.out.println("4 - Conta Empresarial ");
-			System.out.println("5 - Conta Universit·ria ");
+			System.out.println("5 - Conta Universit√°ria ");
 			System.out.println("6 - Extrato Consolidado ");
 			System.out.println("0 - Sair ");
 			menu = leia.nextInt();
@@ -44,7 +44,7 @@ public class BancoMenu {
 			} else if (menu == 5) {
 				contaUniversitaria();
 			} else if (menu == 6) {
-				// funÁ„o extrato
+				// fun√ß√£o extrato
 			} else if (menu == 0) {
 				System.out.println("Encerrando acesso a conta");
 				System.exit(0);
@@ -61,9 +61,9 @@ public class BancoMenu {
 
 		do {
 			for (int transacao = 0; transacao < 10; transacao++) {
-				System.out.println("Digite a opÁ„o de transaÁ„o");
-				System.out.println("1 - CrÈdito ");
-				System.out.println("2 - DÈbito ");
+				System.out.println("Digite a op√ß√£o de transa√ß√£o");
+				System.out.println("1 - Cr√©dito ");
+				System.out.println("2 - D√©bito ");
 				System.out.println("3 - Saldo ");
 				System.out.println("0 - Sair");
 				opcao = entrada.nextInt();
@@ -76,13 +76,13 @@ public class BancoMenu {
 					mostrarSaldo(saldo);
 				} else if (opcao == 2) {
 					if (saldo <= 0.0) {
-						System.out.println("N„o È possÌvel realizar o saque!");
+						System.out.println("N√£o √© poss√≠vel realizar o saque!");
 					} else if (saldo >= debito) {
 						System.out.println("Digite o valor a ser debitado");
 						debito = entrada.nextDouble();
 						saldo -= debito;
 						if(saldo < 0) {
-							System.out.println("N„o È possÌvel realizar este dÈbito. O saldo final n„o pode ser negativo");
+							System.out.println("N√£o √© poss√≠vel realizar este d√©bito. O saldo final n√£o pode ser negativo");
 							saldo = saldo + debito;
 						}
 						mostrarSaldo(saldo);
@@ -96,7 +96,7 @@ public class BancoMenu {
 
 			}
 			System.out
-					.println("VocÍ realizou todas as possÌveis transaÁıes em Conta PoupanÁa, deseja continuar? (S/N)");
+					.println("Voc√™ realizou todas as poss√≠veis transa√ß√µes em Conta Poupan√ßa, deseja continuar? (S/N)");
 			continuar = entrada.next().toUpperCase().charAt(0);
 		} while (continuar == 'S');
 
@@ -111,9 +111,9 @@ public class BancoMenu {
 		do {
 
 			for (int transacao = 0; transacao < 10; transacao++) {
-				System.out.println("Digite a opÁ„o de transaÁ„o");
-				System.out.println("1 - CrÈdito ");
-				System.out.println("2 - DÈbito ");
+				System.out.println("Digite a op√ß√£o de transa√ß√£o");
+				System.out.println("1 - Cr√©dito ");
+				System.out.println("2 - D√©bito ");
 				System.out.println("3 - Saldo ");
 				System.out.println("0 - Sair");
 				opcao = entrada.nextInt();
@@ -125,13 +125,13 @@ public class BancoMenu {
 					mostrarSaldo(saldo);
 				} else if (opcao == 2) {
 					if (saldo <= 0.0) {
-						System.out.println("N„o È possÌvel realizar o saque!");
+						System.out.println("N√£o √© poss√≠vel realizar o saque!");
 					} else if (saldo >= debito) {
 						System.out.println("Digite o valor a ser debitado");
 						debito = entrada.nextDouble();
 						saldo -= debito;
 						if(saldo < 0) {
-							System.out.println("N„o È possÌvel realizar este dÈbito. O saldo final n„o pode ser negativo");
+							System.out.println("N√£o √© poss√≠vel realizar este d√©bito. O saldo final n√£o pode ser negativo");
 							saldo = saldo + debito;
 						}
 						mostrarSaldo(saldo);
@@ -145,23 +145,23 @@ public class BancoMenu {
 
 			}
 			System.out
-					.println("VocÍ realizou todas as possÌveis transaÁıes em Conta Corrente, deseja continuar? (S/N)");
+					.println("Voc√™ realizou todas as poss√≠veis transa√ß√µes em Conta Corrente, deseja continuar? (S/N)");
 			continuar = entrada.next().toUpperCase().charAt(0);
 		} while (continuar == 'S');
 
 	}
 
 	public static void contaEspecial() {
-		double saldo = 0.0, credito = 0.0, debito = 0.0;
+		double saldo = 0.0, credito = 0.0, debito = 0.0, valorLimite = 1000;
 		int opcao;
 		char continuar;
 		Scanner entrada = new Scanner(System.in);
 
 		do {
 			for (int transacao = 0; transacao < 10; transacao++) {
-				System.out.println("Digite a opÁ„o de transaÁ„o");
-				System.out.println("1 - CrÈdito ");
-				System.out.println("2 - DÈbito ");
+				System.out.println("Digite a op√ß√£o de transa√ß√£o");
+				System.out.println("1 - Cr√©dito ");
+				System.out.println("2 - D√©bito ");
 				System.out.println("3 - Saldo ");
 				System.out.println("0 - Sair");
 				opcao = entrada.nextInt();
@@ -173,13 +173,13 @@ public class BancoMenu {
 					mostrarSaldo(saldo);
 				} else if (opcao == 2) {
 					if (saldo <= 0.0) {
-						System.out.println("N„o È possÌvel realizar o saque!");
+						System.out.println("N√£o √© poss√≠vel realizar o saque!");
 					} else if (saldo >= debito) {
 						System.out.println("Digite o valor a ser debitado");
 						debito = entrada.nextDouble();
 						saldo -= debito;
 						if(saldo < 0) {
-							System.out.println("N„o È possÌvel realizar este dÈbito. O saldo final n„o pode ser negativo");
+							System.out.println("N√£o √© poss√≠vel realizar este d√©bito. O saldo final n√£o pode ser negativo");
 							saldo = saldo + debito;
 						}
 						mostrarSaldo(saldo);
@@ -193,7 +193,7 @@ public class BancoMenu {
 
 			}
 			System.out
-					.println("VocÍ realizou todas as possÌveis transaÁıes em Conta Especial, deseja continuar? (S/N)");
+					.println("Voc√™ realizou todas as poss√≠veis transa√ß√µes em Conta Especial, deseja continuar? (S/N)");
 			continuar = entrada.next().toUpperCase().charAt(0);
 		} while (continuar == 'S');
 
@@ -207,9 +207,9 @@ public class BancoMenu {
 
 		do {
 			for (int transacao = 0; transacao < 10; transacao++) {
-				System.out.println("Digite a opÁ„o de transaÁ„o");
-				System.out.println("1 - CrÈdito ");
-				System.out.println("2 - DÈbito ");
+				System.out.println("Digite a op√ß√£o de transa√ß√£o");
+				System.out.println("1 - Cr√©dito ");
+				System.out.println("2 - D√©bito ");
 				System.out.println("3 - Saldo ");
 				System.out.println("0 - Sair");
 				opcao = entrada.nextInt();
@@ -221,13 +221,13 @@ public class BancoMenu {
 					mostrarSaldo(saldo);
 				} else if (opcao == 2) {
 					if (saldo <= 0.0) {
-						System.out.println("N„o È possÌvel realizar o saque!");
+						System.out.println("N√£o √© poss√≠vel realizar o saque!");
 					} else if (saldo >= debito) {
 						System.out.println("Digite o valor a ser debitado");
 						debito = entrada.nextDouble();
 						saldo -= debito;
 						if(saldo < 0) {
-							System.out.println("N„o È possÌvel realizar este dÈbito. O saldo final n„o pode ser negativo");
+							System.out.println("N√£o √© poss√≠vel realizar este d√©bito. O saldo final n√£o pode ser negativo");
 							saldo = saldo + debito;
 						}
 						mostrarSaldo(saldo);
@@ -241,7 +241,7 @@ public class BancoMenu {
 
 			}
 			System.out.println(
-					"VocÍ realizou todas as possÌveis transaÁıes em Conta Empresarial, deseja continuar? (S/N)");
+					"Voc√™ realizou todas as poss√≠veis transa√ß√µes em Conta Empresarial, deseja continuar? (S/N)");
 			continuar = entrada.next().toUpperCase().charAt(0);
 		} while (continuar == 'S');
 
@@ -255,9 +255,9 @@ public class BancoMenu {
 
 		do {
 			for (int transacao = 0; transacao < 10; transacao++) {
-				System.out.println("Digite a opÁ„o de transaÁ„o");
-				System.out.println("1 - CrÈdito ");
-				System.out.println("2 - DÈbito ");
+				System.out.println("Digite a op√ß√£o de transa√ß√£o");
+				System.out.println("1 - Cr√©dito ");
+				System.out.println("2 - D√©bito ");
 				System.out.println("3 - Saldo ");
 				System.out.println("0 - Sair");
 				opcao = entrada.nextInt();
@@ -268,13 +268,13 @@ public class BancoMenu {
 					saldo = saldo + credito;
 				} else if (opcao == 2) {
 					if (saldo <= 0.0) {
-						System.out.println("N„o È possÌvel realizar o saque!");
+						System.out.println("N√£o √© poss√≠vel realizar o saque!");
 					} else if (saldo >= debito) {
 						System.out.println("Digite o valor a ser debitado");
 						debito = entrada.nextDouble();
 						saldo -= debito;
 						if(saldo < 0) {
-							System.out.println("N„o È possÌvel realizar este dÈbito. O saldo final n„o pode ser negativo");
+							System.out.println("N√£o √© poss√≠vel realizar este d√©bito. O saldo final n√£o pode ser negativo");
 							saldo = saldo + debito;
 						}
 						mostrarSaldo(saldo);
@@ -288,15 +288,17 @@ public class BancoMenu {
 
 			}
 			System.out.println(
-					"VocÍ realizou todas as possÌveis transaÁıes em Conta Universitaria, deseja continuar? (S/N)");
+					"Voc√™ realizou todas as poss√≠veis transa√ß√µes em Conta Universitaria, deseja continuar? (S/N)");
 			continuar = entrada.next().toUpperCase().charAt(0);
 		} while (continuar == 'S');
 
 	}
 
-	public static void linha(int tamanho) {
-		for (int x = 0; x < tamanho; x++) {
-			System.out.print("-");
+	//FUN√á√ÇO PARA GERAR LINHA
+	public static void inseriLinha(int tamanho, char simbolo) {
+
+		for (int i = 0; i < tamanho; i++) {
+			System.out.print(simbolo);
 		}
 		System.out.println();
 	}
